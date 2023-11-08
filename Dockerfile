@@ -7,14 +7,19 @@ ENV PYTHONDONTWRITEBYTECODE=1
 # Turns off buffering for easier container logging
 ENV PYTHONUNBUFFERED=1
 
+# Install system dependencies required for OpenCV
+RUN apt-get update && \
+    apt-get install -y libgl1-mesa-glx libglib2.0-0 && \
+    rm -rf /var/lib/apt/lists/*
+
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
 
 WORKDIR /app
 
-# Copy the Resources directory into the container at /app/Resources
-COPY Resources/ /app/Resources/
+# Copy the resources directory into the container at /app/resources
+COPY resources/ /app/resources/
 
 # Copy the rest of your application
 COPY . /app

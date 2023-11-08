@@ -1,3 +1,4 @@
+import JSML
 import numpy as np
 import os
 import cv2
@@ -30,7 +31,8 @@ def create_data_mnist(path):
 
 
 # Create dataset
-X_train, y_train, X_test, y_test = create_data_mnist('fashion_mnist_images')
+X, y, X_test, y_test = create_data_mnist(
+    'resources/fashion_mnist_images')
 
 # Shuffle the training dataset
 keys = np.array(range(X.shape[0]))
