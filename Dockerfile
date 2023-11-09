@@ -15,6 +15,7 @@ RUN apt-get update && \
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
+RUN python -m pip install JakeSilbersteinMachineLearning || echo "Could not install JakeSilbersteinMachineLearning"
 
 WORKDIR /app
 

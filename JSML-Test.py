@@ -1,4 +1,4 @@
-import JSML
+from JakeSilbersteinMachineLearning import basic
 import numpy as np
 import os
 import cv2
@@ -46,21 +46,21 @@ X_test = (X_test.reshape(X_test.shape[0], -1).astype(np.float32) -
           127.5) / 127.5
 
 # Instantiate the model
-model = JSML.Model()
+model = Model()
 
 # Add layers
-model.add(JSML.Layer_Dense(X.shape[1], 128))
-model.add(JSML.Activation_ReLU())
-model.add(JSML.Layer_Dense(128, 128))
-model.add(JSML.Activation_ReLU())
-model.add(JSML.Layer_Dense(128, 10))
-model.add(JSML.Activation_Softmax())
+model.add(Layer_Dense(X.shape[1], 128))
+model.add(Activation_ReLU())
+model.add(Layer_Dense(128, 128))
+model.add(Activation_ReLU())
+model.add(Layer_Dense(128, 10))
+model.add(Activation_Softmax())
 
 # Set loss, optimizer and accuracy objects
 model.set(
-    loss=JSML.Loss_CategoricalCrossentropy(),
-    optimizer=JSML.Optimizer_Adam(decay=1e-3),
-    accuracy=JSML.Accuracy_Categorical()
+    loss=Loss_CategoricalCrossentropy(),
+    optimizer=Optimizer_Adam(decay=1e-3),
+    accuracy=Accuracy_Categorical()
 )
 
 # Finalize the model
