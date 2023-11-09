@@ -1,8 +1,9 @@
-from JakeSilbersteinMachineLearning import basic
+from JSML.basic import *
 import numpy as np
 import os
 import cv2
 
+# Breakpoint
 
 def load_mnist_dataset(dataset, path):
     # Create lists for samples and labels

@@ -15,7 +15,7 @@ RUN apt-get update && \
 # Install pip requirements
 COPY requirements.txt .
 RUN python -m pip install -r requirements.txt
-RUN python -m pip install JakeSilbersteinMachineLearning || echo "Could not install JakeSilbersteinMachineLearning"
+RUN python -m pip install JSML || echo "Could not install JSML"
 
 WORKDIR /app
 
