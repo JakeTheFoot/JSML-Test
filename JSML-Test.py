@@ -71,4 +71,4 @@ model.finalize()
 model.train(X, y, validation_data=(X_test, y_test),
             epochs=10, batch_size=128, print_every=100)
 
-model.evaluate(X_test, y_test) 
+model.evaluate(X_test, y_test)
